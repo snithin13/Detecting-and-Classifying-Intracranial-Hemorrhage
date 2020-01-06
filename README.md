@@ -1,4 +1,6 @@
 # Detecting-and-Classifying-Intracranial-Hemorrhage
+![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_1.png)
+
 This project was undertaken as part of the Advanced Predictive Modelling course within the UT MSBA curriculum
 ## Contributors:
 * Jacob Padden
@@ -18,14 +20,16 @@ Human eyes can only detect approximately 6% changes in grey scale, meaning there
 * Each DICOM file can be mapped to its labels within the CSV using its SOP Instance UID contained within the metadata. The metadata also includes various patient information. 
 * The images within the DICOM files are stored as a 512 x 512 pixel arrays.
 * Our data is extremely imbalanced. 94% of the images don’t have hemorrhages. Among the 6% of images depicting hemorrhages, the distribution of sub-types is also imbalanced as shown below:
-
+![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_4.png)
 * After pre-processing, we had about 160K images in the train set and 30K images in the test set.
 ## Approach:
 1. **Rescaling:** Many CT scan images looked different because they were in raw pixel format and had to be converted into the appropriate HU unit format. Below is an example of how images look before and after the correction.
+![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_5.png "original | RescaleIntercept = 0 | RescaleIntercept = -1000")
 
 2. **Windowing:** The point of windowing is to extract important features from the original image. 
 * Based on our research, three parts from cranial CT scans may be helpful in determining intracranial hemorrhaging: brain, subdural, and soft.
 * After extracting the three layers, we stacked them back together to form a 128 x 128 x 3 array.
+![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_6.png "Using Metadata Original | Stack Layer | Three Channels | Gradient")
 
 3. **Modeling:** 
 
@@ -47,3 +51,4 @@ ii) InceptionV3: For building our next model, we leveraged transfer learning usi
 * Since SHAPLEY values quantify how each pixel contributes to the classification of an image, we assume that pixels with high SHAPLEY values indicate where hemorrhages are and what type of hemorrhage is present. 
 * Using a color scale ranging from blue to red for low to high SHAPLEY values, a proper classification’s hemorrhage area will be colored red. For proper non-classifications, the area where hemorrhage is expected for a given type will be colored blue, indicating the lack of hemorrhage.
 Below is an example of this application to our data:
+![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_7.png)
