@@ -52,3 +52,5 @@ ii) InceptionV3: For building our next model, we leveraged transfer learning usi
 * Using a color scale ranging from blue to red for low to high SHAPLEY values, a proper classification’s hemorrhage area will be colored red. For proper non-classifications, the area where hemorrhage is expected for a given type will be colored blue, indicating the lack of hemorrhage.
 Below is an example of this application to our data:
 ![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_7.png)
+
+Please refer to our medium article to get a comprehensive outlook of the project - (https://medium.com/@kellyzhang0410/detecting-and-classifying-intracranial-hemorrhage-ccb4343a7e50)
