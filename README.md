@@ -20,6 +20,7 @@ Human eyes can only detect approximately 6% changes in grey scale, meaning there
 * Each DICOM file can be mapped to its labels within the CSV using its SOP Instance UID contained within the metadata. The metadata also includes various patient information. 
 * The images within the DICOM files are stored as a 512 x 512 pixel arrays.
 * Our data is extremely imbalanced. 94% of the images don’t have hemorrhages. Among the 6% of images depicting hemorrhages, the distribution of sub-types is also imbalanced as shown below:
+
 ![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_4.png)
 * After pre-processing, we had about 160K images in the train set and 30K images in the test set.
 ## Approach:
