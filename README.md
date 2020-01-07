@@ -1,4 +1,4 @@
-# Detecting-and-Classifying-Intracranial-Hemorrhage
+# Detecting and Classifying Intracranial Hemorrhage
 ![alt text](https://github.com/snithin13/Detecting-and-Classifying-Intracranial-Hemorrhage/blob/master/Images/image_1.png)
 
 This project was undertaken as part of the Advanced Predictive Modelling course within the UT MSBA curriculum
